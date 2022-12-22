@@ -1,6 +1,6 @@
 package com.kun.service;
 
-import com.kun.domain.PowerPrams;
+import com.kun.domain.prams.PowerPrams;
 import com.kun.domain.PowerResult;
 
 import java.util.List;

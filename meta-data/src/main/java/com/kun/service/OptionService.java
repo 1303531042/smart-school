@@ -3,8 +3,8 @@ package com.kun.service;
 import com.kun.domain.*;
 import com.kun.domain.prams.AnalyzePrams;
 import com.kun.domain.prams.LimitPrams;
+import com.kun.domain.prams.PowerPrams;
 import com.kun.domain.prams.ResultPrams;
-import com.kun.domain.vo.AnalyzeOptionVo;
 import com.kun.domain.vo.OptionVO;
 
 import java.util.List;

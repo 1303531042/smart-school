@@ -1,7 +1,7 @@
 package com.kun.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.kun.domain.PowerPrams;
+import com.kun.domain.prams.PowerPrams;
 import com.kun.domain.PowerResult;
 import com.kun.mapper.PowerResultMapper;
 import com.kun.service.PowerResultService;

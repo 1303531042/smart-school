@@ -1,7 +1,6 @@
 package com.kun.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.kun.domain.MonthResult;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

@@ -1,17 +1,13 @@
 package com.kun.service.impl;
 
 import com.kun.domain.*;
-import com.kun.domain.prams.AnalyzePrams;
-import com.kun.domain.prams.BasePrams;
-import com.kun.domain.prams.LimitPrams;
-import com.kun.domain.prams.ResultPrams;
+import com.kun.domain.prams.*;
 import com.kun.domain.vo.AnalyzeOptionVo;
 import com.kun.domain.vo.OptionVO;
 import com.kun.service.OptionService;
 import com.kun.util.DateUtils;
 import org.springframework.stereotype.Service;
 
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;

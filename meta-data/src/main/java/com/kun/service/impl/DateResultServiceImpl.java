@@ -1,7 +1,6 @@
 package com.kun.service.impl;
 
 import com.kun.domain.DateResult;
-import com.kun.domain.DayResult;
 import com.kun.domain.prams.ResultPrams;
 import com.kun.mapper.DateResultMapper;
 import com.kun.service.DateResultService;

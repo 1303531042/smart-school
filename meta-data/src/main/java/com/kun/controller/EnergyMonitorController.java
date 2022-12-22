@@ -1,6 +1,7 @@
 package com.kun.controller;
 
 import com.kun.domain.*;
+import com.kun.domain.prams.PowerPrams;
 import com.kun.domain.prams.ResultPrams;
 import com.kun.domain.vo.OptionVO;
 import com.kun.service.*;
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.text.DecimalFormat;
 import java.util.List;
 
