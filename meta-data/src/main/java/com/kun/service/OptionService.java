@@ -16,7 +16,6 @@ import java.util.List;
 public interface OptionService {
 
 
-    OptionVO createCeiOption(List<DateResult> dateResults, ResultPrams prams);
 
     OptionVO createPowerOption(List<PowerResult> powerResults, PowerPrams prams);
 

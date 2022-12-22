@@ -53,7 +53,8 @@ public class EnergyMonitorController {
             double value = Double.parseDouble(format.format(dateResult.getValue() * 0.785));
             dateResult.setValue(value);
         }
-        OptionVO option = optionService.createCeiOption(dateResults,prams);
+        prams.setEnergyType(3);
+        OptionVO option = optionService.createDateResultsOption(dateResults,prams);
         return AjaxResult.success(option);
     }
 

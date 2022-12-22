@@ -35,25 +35,6 @@ public class OptionServiceImpl implements OptionService {
         setOptionYUnit(prams.getEnergyType(), option);
         return option;
     }
-
-    @Override
-    public OptionVO createCeiOption(List<DateResult> dateResults, ResultPrams prams) {
-        OptionVO option = new OptionVO();
-        setOptionBaseInfo(dateResults, prams, option);
-        option.setYUnit("co2");
-        option.setTitle("");
-        List<Double> valueList = new ArrayList<>();
-        for (DateResult dateResult : dateResults) {
-            DecimalFormat format = new DecimalFormat("#.00");
-            valueList.add(Double.parseDouble(format.format(dateResult.getValue())));
-        }
-        option.setXValues(valueList.toArray(new Double[0]));
-
-        return option;
-    }
-
-
-
     @Override
     public OptionVO createPowerOption(List<PowerResult> powerResults, PowerPrams prams) {
         List<Double> values = new ArrayList<>();
@@ -238,6 +219,9 @@ public class OptionServiceImpl implements OptionService {
                 break;
             case 2:
                 title.append("总能耗");
+                break;
+            case 3:
+                title.append("碳排放");
                 break;
             default:
                 break;
