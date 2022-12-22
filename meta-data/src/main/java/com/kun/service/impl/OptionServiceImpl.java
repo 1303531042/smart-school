@@ -119,6 +119,11 @@ public class OptionServiceImpl implements OptionService {
         option.setInterval(1);
         return option;
     }
+    private OptionVO createWeekendOption(List<DateResult> dateResults, ResultPrams prams, OptionVO option) {
+        option.setXNames(DateUtils.getCurrentWeekDate().toArray(new String[0]));
+        option.setInterval(0);
+        return option;
+    }
 
     public OptionVO createMonthOption(List<DateResult> dateResults, ResultPrams prams, OptionVO option) {
         option.setXNames(DateUtils.getDateByTimeRange(prams.getStartTime(), prams.getStopTime()).toArray(new String[0]));
@@ -137,9 +142,12 @@ public class OptionServiceImpl implements OptionService {
                 option = createDayOption(dateResults, prams,option);
                 break;
             case 1:
-                option = createMonthOption(dateResults, prams,option);
+                option = createWeekendOption(dateResults, prams,option);
                 break;
             case 2:
+                option = createMonthOption(dateResults, prams,option);
+                break;
+            case 3:
                 option = createYearOption(dateResults, prams,option);
                 break;
             default:
@@ -147,6 +155,7 @@ public class OptionServiceImpl implements OptionService {
 
         }
     }
+
 
 
 

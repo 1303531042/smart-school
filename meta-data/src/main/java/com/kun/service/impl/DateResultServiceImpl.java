@@ -28,9 +28,10 @@ public class DateResultServiceImpl implements DateResultService {
                 tableSuffix = "day";
                 break;
             case 1:
+            case 2:
                 tableSuffix = "month";
                 break;
-            case 2:
+            case 3:
                 tableSuffix = "year";
                 break;
             default:

@@ -18,9 +18,9 @@
         FROM
             result_${tableSuffix}
         WHERE
-          build_id = #{build_id}
-          and type=#{value_type}
-          and start_time between #{startTime} and #{stopTime}
+          build_id = #{prams.buildID}
+          and type=#{prams.valueType}
+          and start_time between #{prams.startTime} and #{prams.stopTime}
         order by start_time
     </select>
 
