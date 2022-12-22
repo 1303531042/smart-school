@@ -47,7 +47,7 @@ public class DateUtils {
     /**
      * 获取指定范围内的日期时间
      */
-    public static List<String> getDateByTimeRange(Date startTime, Date stopTime) {
+    public static List<String> getCurrentMonth() {
         List<String> dateList = new ArrayList<>();
         Date d = new Date();
         Date date = getMonthStart(d);
@@ -180,4 +180,27 @@ public class DateUtils {
     }
 
 
+    public static String[] getDayFirstAndLast(Date startTime) {
+        SimpleDateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");
+        String dateStr = df2.format(startTime);
+        return new String[]{dateStr + " 00:00", dateStr + " 23:00"};
+    }
+
+    public static String[] getWeekendFirstAndLast(Date startTime) {
+        List<String> dateList = getCurrentWeekDate();
+        int size = dateList.size();
+        return new String[]{dateList.get(0), dateList.get(size - 1)};
+    }
+
+    public static String[] getMonthFirstAndLast(Date startTime) {
+        List<String> dateList = getCurrentMonth();
+        int size = dateList.size();
+        return new String[]{dateList.get(0), dateList.get(size - 1)};
+    }
+
+    public static String[] getYearFirstAndLast(Date startTime) {
+        List<String> dateList = getCurrentYear();
+        int size = dateList.size();
+        return new String[]{dateList.get(0), dateList.get(size - 1)};
+    }
 }

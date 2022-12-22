@@ -2,6 +2,7 @@ package com.kun.service.impl;
 
 import com.kun.domain.*;
 import com.kun.domain.prams.AnalyzePrams;
+import com.kun.domain.prams.BasePrams;
 import com.kun.domain.prams.LimitPrams;
 import com.kun.domain.prams.ResultPrams;
 import com.kun.domain.vo.AnalyzeOptionVo;
@@ -30,9 +31,8 @@ public class OptionServiceImpl implements OptionService {
             valueList.add(dateResult.getValue());
         }
         option.setXValues(valueList.toArray(new Double[0]));
-        setOptionYUnit(prams, option);
-        setOptionTitle(prams, option);
-
+        setDateResultOptionTitle(prams,option);
+        setOptionYUnit(prams.getEnergyType(), option);
         return option;
     }
 
@@ -88,7 +88,7 @@ public class OptionServiceImpl implements OptionService {
         option.setXValues(xValues.toArray(new Double[0]));
         option.setInterval(0);
         setLimitOptionTitle(option, limitPrams);
-        setLimitOptionYUnit(option, limitPrams);
+        setOptionYUnit(limitPrams.getEnergyType(), option);
         return option;
     }
 
@@ -105,7 +105,7 @@ public class OptionServiceImpl implements OptionService {
         }
         AnalyzeOptionVo option = new AnalyzeOptionVo();
         setAnalyzeOptionTitle(option, prams);
-        setAnalyzeOptionYUnit(option, prams);
+        setOptionYUnit(prams.getEnergyType(), option);
         option.setInterval(2);
         option.setXNames(xNames.toArray(new String[0]));
         option.setXValues(xValues.toArray(new Double[0]));
@@ -114,29 +114,29 @@ public class OptionServiceImpl implements OptionService {
     }
 
 
-    public OptionVO createDayOption(List<DateResult> dateResults, ResultPrams prams, OptionVO option) {
+    public OptionVO createDayOption(List<DateResult> dateResults, BasePrams prams, OptionVO option) {
         option.setXNames(DateUtils.getDateByWholePoint().toArray(new String[0]));
         option.setInterval(1);
         return option;
     }
-    private OptionVO createWeekendOption(List<DateResult> dateResults, ResultPrams prams, OptionVO option) {
+    private OptionVO createWeekendOption(List<DateResult> dateResults, BasePrams prams, OptionVO option) {
         option.setXNames(DateUtils.getCurrentWeekDate().toArray(new String[0]));
         option.setInterval(0);
         return option;
     }
 
-    public OptionVO createMonthOption(List<DateResult> dateResults, ResultPrams prams, OptionVO option) {
-        option.setXNames(DateUtils.getDateByTimeRange(prams.getStartTime(), prams.getStopTime()).toArray(new String[0]));
+    public OptionVO createMonthOption(List<DateResult> dateResults, BasePrams prams, OptionVO option) {
+        option.setXNames(DateUtils.getCurrentMonth().toArray(new String[0]));
         option.setInterval(2);
         return option;
     }
 
-    public OptionVO createYearOption(List<DateResult> dateResults, ResultPrams prams, OptionVO option) {
+    public OptionVO createYearOption(List<DateResult> dateResults, BasePrams prams, OptionVO option) {
         option.setXNames(DateUtils.getCurrentYear().toArray(new String[0]));
         option.setInterval(1);
         return option;
     }
-    private void setOptionBaseInfo(List<DateResult> dateResults, ResultPrams prams,OptionVO option){
+    private void setOptionBaseInfo(List<DateResult> dateResults, BasePrams prams,OptionVO option){
         switch (prams.getQueryType()) {
             case 0:
                 option = createDayOption(dateResults, prams,option);
@@ -157,42 +157,24 @@ public class OptionServiceImpl implements OptionService {
     }
 
 
-
-
-    public void setAnalyzeOptionTitle(OptionVO option,AnalyzePrams prams) {
-        StringBuilder builder = new StringBuilder();
-        builder.append(prams.getBuildName());
-        switch (prams.getEnergyType()) {
+    private void setOptionYUnit(int valueType,OptionVO option) {
+        switch (valueType) {
             case 0:
-                builder.append("【水】");
+                option.setYUnit("水(m³)");
                 break;
             case 1:
-                builder.append("【电】");
+                option.setYUnit("电(KWh)");
+                break;
+            case 2:
+                option.setYUnit("总能耗(kgce)");
+                break;
+            case 3:
+                option.setYUnit("co2");
                 break;
             default:
                 break;
         }
-        switch (prams.getAnalyzeType()) {
-            case 0:
-                builder.append("同比分析");
-                break;
-            case 1:
-                builder.append("环比分析");
-                break;
-            default:
-                break;
-        }
-        option.setTitle(builder.toString());
     }
-    public void setAnalyzeOptionYUnit(OptionVO option, AnalyzePrams prams) {
-        if (prams.getEnergyType() == 0) {
-            option.setYUnit("水(m³)");
-
-        } else if (prams.getEnergyType() == 1) {
-            option.setYUnit("电(KWh)");
-        }
-    }
-
     public void setLimitOptionTitle(OptionVO option, LimitPrams limitPrams) {
         StringBuilder builder = new StringBuilder();
         switch (limitPrams.getQueryType()) {
@@ -229,57 +211,25 @@ public class OptionServiceImpl implements OptionService {
         option.setTitle(builder.toString());
 
     }
-    public void setLimitOptionYUnit(OptionVO option, LimitPrams limitPrams) {
-        if (limitPrams.getEnergyType() == 0) {
-            option.setYUnit("水(m³)");
-
-        } else if (limitPrams.getEnergyType() == 1) {
-            option.setYUnit("电(KWh)");
-        }
-    }
-
-    private void setOptionYUnit(ResultPrams prams,OptionVO option) {
-        switch (prams.getValueType()) {
-            case 0:
-                option.setYUnit("水(m³)");
-                break;
-            case 1:
-                option.setYUnit("电(KWh)");
-                break;
-            case 2:
-                option.setYUnit("总能耗(kgce)");
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void setOptionTitle(ResultPrams prams,OptionVO option) {
-        SimpleDateFormat df1 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        SimpleDateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");
-        SimpleDateFormat df3 = new SimpleDateFormat("yyyy-MM");
+    public void setAnalyzeOptionTitle(OptionVO option,AnalyzePrams prams) {
         StringBuilder title = new StringBuilder();
-        switch (prams.getQueryType()) {
+        setOptionTitlePrefix(title,prams);
+        switch (prams.getAnalyzeType()) {
             case 0:
-                title.append(df1.format(prams.getStartTime()));
-                title.append("~");
-                title.append(df1.format(prams.getStopTime()));
+                title.append("同比分析");
                 break;
             case 1:
-                title.append(df2.format(prams.getStartTime()));
-                title.append("~");
-                title.append(df2.format(prams.getStopTime()));
-                break;
-            case 2:
-                title.append(df3.format(prams.getStartTime()));
-                title.append("~");
-                title.append(df3.format(prams.getStopTime()));
+                title.append("环比分析");
                 break;
             default:
                 break;
         }
-        title.append(" ").append(prams.getBuildName()).append(" ");
-        switch (prams.getValueType()) {
+        option.setTitle(title.toString());
+    }
+    private void setDateResultOptionTitle(ResultPrams prams,OptionVO option) {
+        StringBuilder title = new StringBuilder();
+        setOptionTitlePrefix(title,prams);
+        switch (prams.getEnergyType() ) {
             case 0:
                 title.append("水");
                 break;
@@ -293,6 +243,34 @@ public class OptionServiceImpl implements OptionService {
                 break;
         }
         option.setTitle(title.toString());
+    }
+
+    private void setOptionTitlePrefix(StringBuilder title, BasePrams prams) {
+        String[] strings = null;
+        switch (prams.getQueryType()) {
+            case 0:
+                strings = DateUtils.getDayFirstAndLast(prams.getStartTime());
+                break;
+            case 1:
+                strings = DateUtils.getWeekendFirstAndLast(prams.getStartTime());
+                break;
+            case 2:
+                strings = DateUtils.getMonthFirstAndLast(prams.getStartTime());
+                break;
+            case 3:
+                strings = DateUtils.getYearFirstAndLast(prams.getStartTime());
+                break;
+            default:
+                break;
+        }
+        if (strings != null) {
+            title.append(strings[0]);
+            title.append("~");
+            title.append(strings[1]);
+            title.append(" ").append(prams.getBuildName()).append(" ");
+        }
 
     }
+
+
 }
