@@ -22,6 +22,6 @@ public class BasePrams {
     private Date stopTime;
     @ApiModelProperty("查询时间类型 0-day 1-weekend 2-month 3-year")
     private Integer queryType;
-    @ApiModelProperty("能源类型 0-水 1-电")
+    @ApiModelProperty("能源类型 0-水 1-电 2-综合 3-碳")
     private Integer energyType;
 }
