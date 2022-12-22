@@ -132,7 +132,7 @@ public class OptionServiceImpl implements OptionService {
     }
 
     public OptionVO createYearOption(List<DateResult> dateResults, ResultPrams prams, OptionVO option) {
-        option.setXNames(DateUtils.getRangeByMonth(prams.getStartTime(), prams.getStopTime()).toArray(new String[0]));
+        option.setXNames(DateUtils.getCurrentYear().toArray(new String[0]));
         option.setInterval(1);
         return option;
     }

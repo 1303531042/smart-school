@@ -2487,3 +2487,65 @@ org.apache.ibatis.reflection.ReflectionException: There is no getter for propert
 2022-12-22 17:56:40.819 DEBUG 17664 --- [http-nio-8697-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
 2022-12-22 18:17:04.790  INFO 17664 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-12-22 18:17:04.794  INFO 17664 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-22 18:18:27.118  INFO 8824 --- [main] com.kun.MetaDataApplication              : Starting MetaDataApplication using Java 1.8.0_332 on DESKTOP-0U1JJ33 with PID 8824 (D:\JavaProject\smart-school\meta-data\target\classes started by qzyn in D:\JavaProject\smart-school)
+2022-12-22 18:18:27.119  INFO 8824 --- [main] com.kun.MetaDataApplication              : No active profile set, falling back to 1 default profile: "default"
+2022-12-22 18:18:27.766  INFO 8824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8697 (http)
+2022-12-22 18:18:27.772  INFO 8824 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-22 18:18:27.772  INFO 8824 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-22 18:18:27.839  INFO 8824 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-22 18:18:27.839  INFO 8824 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 690 ms
+2022-12-22 18:18:28.623 DEBUG 8824 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-22 18:18:28.662 DEBUG 8824 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2022-12-22 18:18:28.678 DEBUG 8824 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-22 18:18:28.683 DEBUG 8824 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-22 18:18:28.784  INFO 8824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8697 (http) with context path ''
+2022-12-22 18:18:28.790  INFO 8824 --- [main] com.kun.MetaDataApplication              : Started MetaDataApplication in 1.965 seconds (JVM running for 2.485)
+2022-12-22 18:18:35.948  INFO 8824 --- [http-nio-8697-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-22 18:18:35.948  INFO 8824 --- [http-nio-8697-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-22 18:18:35.948 DEBUG 8824 --- [http-nio-8697-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-22 18:18:35.948 DEBUG 8824 --- [http-nio-8697-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-12-22 18:18:35.948 DEBUG 8824 --- [http-nio-8697-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-12-22 18:18:35.949 DEBUG 8824 --- [http-nio-8697-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@49ec8555
+2022-12-22 18:18:35.949 DEBUG 8824 --- [http-nio-8697-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@36cb362a
+2022-12-22 18:18:35.949 DEBUG 8824 --- [http-nio-8697-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-22 18:18:35.949  INFO 8824 --- [http-nio-8697-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-22 18:18:35.956 DEBUG 8824 --- [http-nio-8697-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/energy/GetData", parameters={}
+2022-12-22 18:18:35.959 DEBUG 8824 --- [http-nio-8697-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.kun.controller.EnergyMonitorController#getResultList(ResultPrams)
+2022-12-22 18:18:36.004 DEBUG 8824 --- [http-nio-8697-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ResultPrams(startTime=Thu Dec 22 00:00:00 CST 2022, stopTime=Thu Dec 22 18:17:50 CST 2022, buildID=1 (truncated)...]
+2022-12-22 18:18:36.025  INFO 8824 --- [http-nio-8697-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-22 18:18:36.195  INFO 8824 --- [http-nio-8697-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-22 18:18:36.247 DEBUG 8824 --- [http-nio-8697-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-22 18:18:36.248 DEBUG 8824 --- [http-nio-8697-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [{msg=操作成功, code=200, data=OptionVO(title=2022-12-22 00:00~2022-12-22 18:17 河海大学 电, xNames=[00:00, 01 (truncated)...]
+2022-12-22 18:18:36.269 DEBUG 8824 --- [http-nio-8697-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-22 18:19:01.401 DEBUG 8824 --- [http-nio-8697-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/energy/GetData", parameters={}
+2022-12-22 18:19:01.401 DEBUG 8824 --- [http-nio-8697-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.kun.controller.EnergyMonitorController#getResultList(ResultPrams)
+2022-12-22 18:19:01.402 DEBUG 8824 --- [http-nio-8697-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ResultPrams(startTime=Mon Dec 19 00:00:00 CST 2022, stopTime=Thu Dec 22 18:18:59 CST 2022, buildID=1 (truncated)...]
+2022-12-22 18:19:01.431 DEBUG 8824 --- [http-nio-8697-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-22 18:19:01.431 DEBUG 8824 --- [http-nio-8697-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [{msg=操作成功, code=200, data=OptionVO(title=2022-12-19~2022-12-22 河海大学 电, xNames=[2022-12-19, 2022-12-2 (truncated)...]
+2022-12-22 18:19:01.431 DEBUG 8824 --- [http-nio-8697-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-22 18:19:05.094 DEBUG 8824 --- [http-nio-8697-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/energy/GetData", parameters={}
+2022-12-22 18:19:05.095 DEBUG 8824 --- [http-nio-8697-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.kun.controller.EnergyMonitorController#getResultList(ResultPrams)
+2022-12-22 18:19:05.095 DEBUG 8824 --- [http-nio-8697-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ResultPrams(startTime=Mon Dec 19 00:00:00 CST 2022, stopTime=Thu Dec 22 18:18:59 CST 2022, buildID=1 (truncated)...]
+2022-12-22 18:19:05.110 DEBUG 8824 --- [http-nio-8697-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-22 18:19:05.110 DEBUG 8824 --- [http-nio-8697-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [{msg=操作成功, code=200, data=OptionVO(title=2022-12-19~2022-12-22 河海大学 电, xNames=[2022-12-19, 2022-12-2 (truncated)...]
+2022-12-22 18:19:05.110 DEBUG 8824 --- [http-nio-8697-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-22 18:19:16.426 DEBUG 8824 --- [http-nio-8697-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/energy/GetData", parameters={}
+2022-12-22 18:19:16.426 DEBUG 8824 --- [http-nio-8697-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.kun.controller.EnergyMonitorController#getResultList(ResultPrams)
+2022-12-22 18:19:16.427 DEBUG 8824 --- [http-nio-8697-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ResultPrams(startTime=Thu Dec 01 00:00:00 CST 2022, stopTime=Thu Dec 22 18:19:15 CST 2022, buildID=1 (truncated)...]
+2022-12-22 18:19:16.452 DEBUG 8824 --- [http-nio-8697-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-22 18:19:16.452 DEBUG 8824 --- [http-nio-8697-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [{msg=操作成功, code=200, data=OptionVO(title=2022-12~2022-12 河海大学 电, xNames=[2022-12-01, 2022-12-02, 202 (truncated)...]
+2022-12-22 18:19:16.453 DEBUG 8824 --- [http-nio-8697-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-22 18:19:19.582 DEBUG 8824 --- [http-nio-8697-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/energy/GetData", parameters={}
+2022-12-22 18:19:19.582 DEBUG 8824 --- [http-nio-8697-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.kun.controller.EnergyMonitorController#getResultList(ResultPrams)
+2022-12-22 18:19:19.583 DEBUG 8824 --- [http-nio-8697-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ResultPrams(startTime=Thu Dec 01 00:00:00 CST 2022, stopTime=Thu Dec 22 18:19:15 CST 2022, buildID=1 (truncated)...]
+2022-12-22 18:19:19.600 DEBUG 8824 --- [http-nio-8697-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-22 18:19:19.600 DEBUG 8824 --- [http-nio-8697-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [{msg=操作成功, code=200, data=OptionVO(title=2022-12~2022-12 河海大学 电, xNames=[2022-12-01, 2022-12-02, 202 (truncated)...]
+2022-12-22 18:19:19.601 DEBUG 8824 --- [http-nio-8697-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-22 18:20:08.529 DEBUG 8824 --- [http-nio-8697-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/energy/GetData", parameters={}
+2022-12-22 18:20:08.530 DEBUG 8824 --- [http-nio-8697-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.kun.controller.EnergyMonitorController#getResultList(ResultPrams)
+2022-12-22 18:20:08.530 DEBUG 8824 --- [http-nio-8697-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ResultPrams(startTime=Sat Jan 01 00:00:00 CST 2022, stopTime=Thu Dec 22 18:20:06 CST 2022, buildID=1 (truncated)...]
+2022-12-22 18:20:08.557 DEBUG 8824 --- [http-nio-8697-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-22 18:20:08.558 DEBUG 8824 --- [http-nio-8697-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{msg=操作成功, code=200, data=OptionVO(title=2022-01~2022-12 河海大学 电, xNames=[2022-12-01, 2022-12-02, 202 (truncated)...]
+2022-12-22 18:20:08.559 DEBUG 8824 --- [http-nio-8697-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-22 18:29:56.752  INFO 8824 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-22 18:29:56.758  INFO 8824 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

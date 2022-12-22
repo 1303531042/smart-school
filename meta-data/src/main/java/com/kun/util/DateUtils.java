@@ -12,6 +12,7 @@ import java.util.*;
  **/
 public class DateUtils {
     public static void main(String args[]) {
+        System.out.println(getCurrentYear());
 
     }
 
@@ -31,6 +32,16 @@ public class DateUtils {
             dd.add(Calendar.MONTH, 1);//进行当前日期月份加1
         }
         return rangeSet;
+    }
+
+    public static List<String> getCurrentYear() {
+        List<String> list = new ArrayList<>();
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        String str = "-01";
+        for (int i = 1; i < 13; i++) {
+            list.add(year + "-" + i + str);
+        }
+        return list;
     }
 
     /**
