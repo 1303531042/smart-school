@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kun.mapper.MeterBaseValueMapper">
+
+    <resultMap id="MeterBaseValue" type="com.kun.domain.MeterBaseValue">
+        <result property="collectTime" column="F_CollectTime"/>
+        <result property="storageBasTime" column="F_StorageBasTime"/>
+        <result property="value" column="F_Value"/>
+    </resultMap>
+    <select id="selectAllByTableName" resultMap="MeterBaseValue">
+        select * from t_ov_meterbasevalue_${meterID}
+    </select>
+
+
+</mapper>

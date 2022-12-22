@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kun.mapper.DateResultMapper">
+
+    <resultMap id="result" type="com.kun.domain.DateResult">
+        <result property="id" column="id"/>
+        <result property="buildID" column="build_id"/>
+        <result property="startTime" column="start_time"/>
+        <result property="type" column="type"/>
+        <result property="value" column="value"/>
+    </resultMap>
+    <select id="selectListByTime" resultMap="result">
+        SELECT
+            *
+        FROM
+            result_${tableSuffix}
+        WHERE
+          build_id = #{build_id}
+          and type=#{value_type}
+          and start_time between #{startTime} and #{stopTime}
+        order by start_time
+    </select>
+
+
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kun.mapper.AnalyzeMapper">
+
+    <resultMap id="MeterBaseValue" type="com.kun.domain.Analyze">
+        <result property="id" column="id"/>
+        <result property="buildID" column="build_id"/>
+        <result property="time" column="time"/>
+        <result property="energyType" column="energy_type"/>
+        <result property="analyzeType" column="analyze_type"/>
+        <result property="dateStr" column="date_str"/>
+        <result property="nowValue" column="now_value"/>
+        <result property="lastValue" column="last_value"/>
+        <result property="diffValue" column="diff_value"/>
+        <result property="ratioValue" column="ratio_value"/>
+    </resultMap>
+    <select id="selectListByTime" resultMap="MeterBaseValue">
+        SELECT
+            *
+        FROM
+            analyze_${tableSuffix}
+        WHERE
+          build_id = #{build_id}
+          and energy_type=#{energyType}
+          and analyze_type=#{analyzeType}
+          and time between #{startTime} and #{stopTime}
+    </select>
+
+
+</mapper>

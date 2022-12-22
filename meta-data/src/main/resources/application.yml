@@ -1,0 +1,40 @@
+
+spring:
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.10.152:3306/smart_school?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+    username: root
+    password: root
+
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+influx:
+  token: mVbQIK9gHuuwdW_6SN3SY79Tjqa6Wj7lrS6sbxfotIfecqNRlr0FNxuVzzp4JtUoJdhtYhKpA9pf3TnABLRf5Q==
+  bucket: smart_school
+  org: yn
+  url: http://192.168.10.152:8086
+
+
+logging:
+  file:
+    name: logs/log.log # 日志文件地址
+  level:
+    '[com.epower]': debug
+    '[org.springframework.web]': debug
+  logback:
+    rollingpolicy:
+    max-history: 7
+server:
+  port: 8697
+
+
+
+
